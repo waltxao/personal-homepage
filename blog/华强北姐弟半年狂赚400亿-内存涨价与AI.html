@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>热搜第一！华强北姐弟半年狂赚400亿 | Walt 的个人主页</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+    <style>
+        :root { 
+            --bg-dark: #0a0a0f; 
+            --bg-card: #12121a; 
+            --accent-green: #00ff9f; 
+            --accent-blue: #00d4ff;
+            --accent-red: #ff4444;
+            --text-primary: #e0e0e0; 
+            --text-secondary: #8a8a9a; 
+            --border-color: #2a2a3a; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans SC', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.8; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        
+        /* 封面图 */
+        .cover-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cover-image::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="none" stroke="%2300ff9f" stroke-width="0.5" x="0" y="0" width="100" height="100"/><rect fill="none" stroke="%2300d4ff" stroke-width="0.3" x="10" y="10" width="80" height="80"/><rect fill="none" stroke="%23ff4444" stroke-width="0.2" x="20" y="20" width="60" height="60"/></svg>');
+            opacity: 0.3;
+        }
+        .cover-text {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            z-index: 1;
+            text-shadow: 0 0 30px rgba(0,255,159,0.5);
+        }
+        .cover-text .highlight { color: var(--accent-red); }
+        
+        /* 文章内容 */
+        .article-header { margin-bottom: 40px; }
+        h1 { font-size: 1.8rem; margin-bottom: 20px; line-height: 1.4; }
+        .meta { color: var(--text-secondary); font-size: 0.9rem; }
+        
+        h2 { 
+            font-size: 1.4rem; 
+            margin: 50px 0 25px; 
+            padding-bottom: 15px; 
+            border-bottom: 2px solid var(--accent-green);
+            color: var(--accent-green);
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin: 30px 0 15px;
+            color: var(--accent-blue);
+        }
+        
+        p { margin-bottom: 20px; color: var(--text-secondary); }
+        
+        /* 表格 */
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; }
+        th, td { padding: 15px; border: 1px solid var(--border-color); text-align: left; }
+        th { background: var(--bg-card); color: var(--accent-green); font-weight: bold; }
+        tr:hover { background: rgba(0,255,159,0.05); }
+        
+        /* 引用 */
+        blockquote { 
+            border-left: 4px solid var(--accent-red); 
+            padding: 20px 25px; 
+            margin: 25px 0; 
+            background: rgba(255,68,68,0.1);
+            border-radius: 0 8px 8px 0;
+        }
+        blockquote p { margin: 0; color: var(--text-primary); font-size: 1.1rem; }
+        
+        /* 列表 */
+        ul, ol { margin: 20px 0 20px 25px; color: var(--text-secondary); }
+        li { margin-bottom: 12px; }
+        
+        /* 强调 */
+        strong { color: var(--accent-green); }
+        
+        /* 返回链接 */
+        .back-link { 
+            display: inline-block; 
+            margin-bottom: 30px; 
+            color: var(--accent-blue); 
+            text-decoration: none; 
+            font-size: 0.9rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        
+        /* 标签 */
+        .tags { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+        .tag { 
+            display: inline-block; 
+            background: var(--bg-card); 
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 8px 16px; 
+            border-radius: 20px; 
+            font-size: 0.85rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        /* 底部 */
+        footer { 
+            text-align: center; 
+            padding: 50px 0; 
+            border-top: 1px solid var(--border-color); 
+            margin-top: 60px; 
+            color: var(--text-secondary); 
+            font-size: 0.9rem; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 封面图 -->
+        <div class="cover-image">
+            <div class="cover-text">
+                热搜第一！华强北姐弟半年狂赚<span class="highlight">400亿</span>
+            </div>
+        </div>
+        
+        <a href="../blog.html" class="back-link">← 返回博客列表</a>
+        
+        <header class="article-header">
+            <h1>一根内存条涨价3倍背后，是AI正在"抽干"你的电脑</h1>
+            <p class="meta">📅 2026-03-21 | ✍️ Walt | 💾 科技</p>
+        </header>
+        
+        <div class="content">
+            <h2>热搜炸了</h2>
+            <p>今日热榜第一：</p>
+            <blockquote>
+                <p><strong>"内存大涨价，华强北姐弟半年赚400亿"</strong></p>
+            </blockquote>
+            <p>一对普通姐弟，在华强北卖内存条，<strong>半年赚了400个小目标</strong>。</p>
+            <p>你觉得这和你没关系？</p>
+            <p><strong>大错特错。</strong></p>
+            
+            <h2>涨价已经来了</h2>
+            <p><strong>2026年Q1现状</strong></p>
+            <table>
+                <tr><th>产品</th><th>涨幅</th><th>多少钱</th></tr>
+                <tr><td>DDR5内存</td><td>超300%</td><td>32GB套装约3600元</td></tr>
+                <tr><td>DDR4内存</td><td>超150%</td><td>也在涨</td></tr>
+                <tr><td>固态硬盘</td><td>约2倍</td><td>翻倍</td></tr>
+                <tr><td>笔记本整机</td><td>5-15%</td><td>已经涨了</td></tr>
+                <tr><td>显卡</td><td>继续涨</td><td>抢不到</td></tr>
+            </table>
+            <blockquote>
+                <p>32GB DDR5内存条，2025年初只要<strong>300-500元</strong>，现在涨到<strong>3600元</strong>。<br>
+                64GB DDR5更是达到<strong>7500元</strong>。<br>
+                <strong>每天涨价约50元。</strong></p>
+            </blockquote>
+            <p><strong>这不是"将要涨价"。这是"已经涨疯"。</strong></p>
+            
+            <h2>谁在幕后推动？</h2>
+            <p>答案只有一个：<strong>AI</strong></p>
+            
+            <h3>AI正在"抽干"全球内存</h3>
+            <blockquote>
+                <p>训练一次大模型，需要消耗相当于<strong>几千台电脑</strong>的内存。</p>
+            </blockquote>
+            <p>这不是比喻。这是物理现实。</p>
+            <p><strong>AI数据中心像一个"内存黑洞"，正在疯狂吸走全球产能。</strong></p>
+            <p>据Counterpoint预测：</p>
+            <blockquote>
+                <p>到2026年，AI数据中心将消耗全球<strong>70%以上</strong>的高端内存芯片。</p>
+            </blockquote>
+            
+            <h2>一场"零和博弈"</h2>
+            <p>IDC说得特别直白：</p>
+            <blockquote>
+                <p>每多生产一片给AI用的"超级内存"（HBM）<br>
+                就意味着：<br>
+                - 少生产一片给你手机的内存<br>
+                - 少生产一片给你电脑的内存</p>
+            </blockquote>
+            <p><strong>蛋糕就这么大，AI切走了70%，剩下的30%都不够普通人分。</strong></p>
+            
+            <h2>谁在闷声发大财？</h2>
+            <p><strong>内存厂商赚翻了</strong></p>
+            <table>
+                <tr><th>厂商</th><th>HBM市场份额</th></tr>
+                <tr><td>SK海力士</td><td><strong>53%</strong></td></tr>
+                <tr><td>三星</td><td>35%</td></tr>
+                <tr><td>美光</td><td>11%</td></tr>
+            </table>
+            <blockquote>
+                <p>黄仁勋都被问到了：<br>
+                "内存这么贵，会不会引发玩家不满？"<br>
+                他的回答：<strong>"我们也在抢，真的不够用。"</strong></p>
+            </blockquote>
+            
+            <h2>对你影响多大？</h2>
+            <p><strong>已经发生的</strong></p>
+            <ul>
+                <li>32GB内存条从300元涨到3600元</li>
+                <li>笔记本涨了5-15%</li>
+                <li>游戏显卡继续缺货、涨价</li>
+            </ul>
+            <p><strong>将会发生的</strong></p>
+            <ul>
+                <li>汽车芯片也可能紧缺</li>
+                <li>组装电脑越来越贵</li>
+                <li>所有电子产品都可能跟涨</li>
+            </ul>
+            
+            <h2>结论</h2>
+            <blockquote>
+                <p>2026年，内存不再是配角。<br><br>
+                它是AI时代的"石油"，是最硬的硬通货。<br><br>
+                当你在抱怨内存涨价时——<br>
+                <strong>你实际上在为AI革命买单。</strong></p>
+            </blockquote>
+            <p>而那些在华强北卖内存的姐弟，只不过是这场AI盛宴中，最先被看见的幸运儿。</p>
+            
+            <!-- 标签 -->
+            <div class="tags">
+                <span class="tag">#内存涨价</span>
+                <span class="tag">#AI</span>
+                <span class="tag">#华强北</span>
+                <span class="tag">#2026</span>
+                <span class="tag">#科技</span>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2026 Walt — All rights reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
