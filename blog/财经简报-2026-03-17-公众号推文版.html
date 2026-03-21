@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 今日财经简报 | 2026年3月17日 | Walt's Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-hover: #1a1a25;
+            --accent-green: #00ff9f;
+            --accent-blue: #00d4ff;
+            --accent-purple: #b388ff;
+            --text-primary: #e0e0e0;
+            --text-secondary: #8a8a9a;
+            --border-color: #2a2a3a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 159, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 159, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航 */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--text-primary);
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 25px;
+            transition: color 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* 文章内容 */
+        .article {
+            padding: 120px 0 80px;
+        }
+
+        .article-header {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-header h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .article-content {
+            font-size: 1.05rem;
+        }
+
+        .article-content h1,
+        .article-content h2,
+        .article-content h3 {
+            margin: 40px 0 20px;
+            color: var(--text-primary);
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.2rem;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .article-content a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .article-content a:hover {
+            text-decoration: underline;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 0 0 20px 20px;
+            color: var(--text-secondary);
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .article-content code {
+            background: var(--bg-card);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            color: var(--accent-green);
+        }
+
+        .article-content pre {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 20px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .article-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .article-content th {
+            background: var(--bg-card);
+            color: var(--accent-green);
+        }
+
+        /* 返回按钮 */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: color 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--accent-green);
+        }
+
+        /* 页脚 */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">Walt<span>::~</span></a>
+            <div class="nav-links">
+                <a href="../index.html#about">关于</a>
+                <a href="../index.html#projects">项目</a>
+                <a href="../blog.html">博客</a>
+                <a href="../index.html#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article">
+        <div class="container">
+            <a href="../blog.html" class="back-link">← 返回博客列表</a>
+            
+            <header class="article-header">
+                <h1>📊 今日财经简报 | 2026年3月17日</h1>
+                <div class="article-meta">
+                    <span>📅 2026-03-21</span>
+                    <span>✍️ Walt</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <h1>📊 今日财经简报 | 2026年3月17日</h1>
+<blockquote>
+<p>房地产板块强势涨停，A股缩量调整</p>
+</blockquote>
+<hr>
+<h2>💹 市场概览</h2>
+<h3>A股 | 缩量调整</h3>
+<ul>
+<li><strong>沪指</strong>：4083点（-0.04%）</li>
+<li><strong>深成指</strong>：14250点（-0.40%）</li>
+<li><strong>创业板</strong>：3337点（-0.58%）</li>
+<li><strong>成交额</strong>：1.5万亿（缩量1900亿）</li>
+</ul>
+<p><strong>看点</strong>：房地产板块逆势涨停，成为今日唯一亮点 🏠</p>
+<hr>
+<h3>港股 | 相对强势</h3>
+<ul>
+<li><strong>恒指</strong>：26088点（+0.98%）📈</li>
+<li><strong>科技股</strong>：反弹明显</li>
+</ul>
+<p><strong>看点</strong>：南向资金持续流入，花旗看好比亚迪（目标价174港元）</p>
+<hr>
+<h3>美股 | 昨日收涨</h3>
+<ul>
+<li><strong>道指</strong>：46946点（+0.83%）</li>
+<li><strong>纳指</strong>：22374点（+1.22%）📈</li>
+</ul>
+<p><strong>看点</strong>：科技股反弹，但高盛警告&quot;调整未到终点&quot;</p>
+<hr>
+<h2>💰 资产价格</h2>
+<table>
+<thead>
+<tr>
+<th>资产</th>
+<th>价格</th>
+<th>涨跌</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>比特币</strong></td>
+<td>$74654</td>
+<td>+1.36% 📈</td>
+</tr>
+<tr>
+<td><strong>以太坊</strong></td>
+<td>$2328</td>
+<td>+3.84% 📈</td>
+</tr>
+<tr>
+<td><strong>黄金</strong></td>
+<td>$2650/oz</td>
+<td>高位震荡</td>
+</tr>
+<tr>
+<td><strong>原油</strong></td>
+<td>$95.3/桶</td>
+<td>强势整理</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🔥 今日热点</h2>
+<h3>1️⃣ 房地产板块密集涨停</h3>
+<p><strong>热度</strong>：2904万 🔥</p>
+<p>市场传闻政策利好：降低首付、放松限购、降息降准。板块多股涨停，万科、保利等龙头强势。</p>
+<p><strong>观点</strong>：政策预期升温，短期或持续活跃，但需警惕落地不及预期风险。</p>
+<hr>
+<h3>2️⃣ 泡椒凤爪行业被曝光</h3>
+<p><strong>热度</strong>：850万</p>
+<p>315晚会曝光行业乱象：违规添加剂、生产环境不达标。有友食品等相关个股承压。</p>
+<p><strong>观点</strong>：短期回避问题企业，中长期行业洗牌，龙头或受益。</p>
+<hr>
+<h3>3️⃣ 高盛：市场调整未到终点</h3>
+<p><strong>热度</strong>：980万</p>
+<p>高盛警告三大风险：估值偏高、盈利放缓、地缘风险。建议保持谨慎。</p>
+<p><strong>观点</strong>：机构分歧加大，控制仓位，关注业绩确定性标的。</p>
+<hr>
+<h2>💡 投资策略</h2>
+<h3>短期（1-2周）</h3>
+<p><strong>看多</strong>：</p>
+<ul>
+<li>🏠 房地产（政策预期）</li>
+<li>💊 医药（防御属性）</li>
+</ul>
+<p><strong>回避</strong>：</p>
+<ul>
+<li>⚠️ 泡椒凤爪相关</li>
+<li>⚠️ 高估值科技股</li>
+</ul>
+<p><strong>仓位</strong>：60-70%，保持灵活</p>
+<hr>
+<h3>中长期（1-3月）</h3>
+<p><strong>配置方向</strong>：</p>
+<ul>
+<li>📱 AI、半导体（调整后介入）</li>
+<li>💰 高股息银行、电力</li>
+<li>🌏 港股科技（估值修复）</li>
+</ul>
+<hr>
+<h2>📅 明日关注</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>事件</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>09:30</td>
+<td>中国LPR报价</td>
+<td>房地产板块</td>
+</tr>
+<tr>
+<td>20:30</td>
+<td>美国新屋开工</td>
+<td>经济景气度</td>
+</tr>
+<tr>
+<td>22:30</td>
+<td>美联储讲话</td>
+<td>政策预期</td>
+</tr>
+</tbody></table>
+<p><strong>重点关注</strong>：LPR是否下调</p>
+<hr>
+<h2>🎯 核心观点</h2>
+<ol>
+<li><strong>A股</strong>：短期震荡，房地产政策预期升温</li>
+<li><strong>港股</strong>：相对强势，科技股值得关注</li>
+<li><strong>美股</strong>：反弹延续，但需警惕波动</li>
+<li><strong>加密货币</strong>：普涨格局，以太坊领涨</li>
+</ol>
+<hr>
+<p><em>数据来源：腾讯财经、财联社、新浪财经、CoinGecko</em></p>
+<p><em>免责声明：仅供参考，不构成投资建议</em></p>
+<p><em>2026年3月17日</em></p>
+<hr>
+<p><strong>💬 你怎么看今日市场？</strong></p>
+<p><strong>👇 欢迎在评论区讨论 👇</strong></p>
+
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Walt — All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
