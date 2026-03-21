@@ -31,6 +31,7 @@ personal-homepage/
 ## ⚙️ 功能特性
 
 ### 🏠 主页
+
 - 极客风格终端设计
 - 个人简介与技能展示
 - 项目作品展示
@@ -39,11 +40,13 @@ personal-homepage/
 - 响应式布局
 
 ### 📝 博客
+
 - 分类筛选：全部 / AI大模型 / 工具技巧 / 财经分析
 - 博客文章列表
 - 返回导航
 
 ### 🔧 后台管理 (admin.html)
+
 - 密码登录保护
 - 博客管理：撰写、编辑、删除
 - Markdown 编辑器（支持实时预览）
@@ -57,10 +60,12 @@ personal-homepage/
 ## 🔐 后台使用指南
 
 ### 1. 登录
+
 - 访问 `admin.html`
 - 默认密码：`Walt2026`
 
 ### 2. 修改个人简介
+
 1. 点击「网站设置」
 2. 修改头像、名称、简介等
 3. 点击「💾 保存修改」
@@ -68,6 +73,7 @@ personal-homepage/
 5. 将 `config.js` 上传到 GitHub 仓库根目录
 
 ### 3. 修改联系方式
+
 1. 点击「网站设置」
 2. 修改邮箱、电话、微信等
 3. 点击「💾 保存联系方式」
@@ -75,6 +81,7 @@ personal-homepage/
 5. 上传到 GitHub
 
 ### 4. 写新博客
+
 1. 点击「博客管理」→「撰写博客」
 2. 填写标题、选择分类
 3. 使用 Markdown 编辑器写文章
@@ -83,6 +90,7 @@ personal-homepage/
 6. 将下载的 HTML 文件上传到 `blog/` 目录
 
 ### 5. 修改密码
+
 1. 点击「修改密码」
 2. 输入当前密码、新密码
 3. 点击「🔐 修改密码」
@@ -92,11 +100,13 @@ personal-homepage/
 ## 📤 上传 GitHub Pages
 
 ### 方法一：删除旧仓库，重新上传
+
 1. 删除 GitHub 上的旧仓库
 2. 重新创建仓库 `personal-homepage`
 3. 上传整个文件夹
 
 ### 方法二：更新文件
+
 1. 上传 `config.js` 到根目录
 2. 上传新的博客 HTML 到 `blog/` 目录
 3. 上传 `index.html`（如有个性化修改）
@@ -106,13 +116,17 @@ personal-homepage/
 ## 🎨 自定义修改
 
 ### 修改主页内容
+
 直接编辑 `index.html` 中的对应部分：
+
 - 技能标签：搜索 `skill-tag`
 - 项目展示：搜索 `project-card`
 - 博客列表：搜索 `blog-list`
 
 ### 修改样式
+
 在 `index.html` 的 `<style>` 标签中修改 CSS 变量：
+
 ```css
 :root {
     --bg-dark: #0a0a0f;      /* 背景色 */
