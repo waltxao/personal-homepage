@@ -295,10 +295,10 @@
 
         <!-- 分类标签 -->
         <div class="blog-tags">
-            <a href="#" class="blog-tag active" onclick="filterBlog('all', this); return false;">全部</a>
-            <a href="#ai" class="blog-tag" onclick="filterBlog('ai', this); return false;">AI 大模型</a>
-            <a href="#tools" class="blog-tag" onclick="filterBlog('tools', this); return false;">工具技巧</a>
-            <a href="#finance" class="blog-tag" onclick="filterBlog('finance', this); return false;">财经分析</a>
+            <a href="#" class="blog-tag active">全部</a>
+            <a href="#ai" class="blog-tag">AI 大模型</a>
+            <a href="#tools" class="blog-tag">工具技巧</a>
+            <a href="#finance" class="blog-tag">财经分析</a>
         </div>
 
         <!-- 博客列表 - 按时间倒序 -->
@@ -490,23 +490,44 @@
         </div>
     </footer>
 
+    
+
     <script>
-    function filterBlog(category, element) {
-        // 更新标签状态
-        document.querySelectorAll('.blog-tag').forEach(tag => tag.classList.remove('active'));
-        element.classList.add('active');
-        
-        // 筛选文章
-        document.querySelectorAll('.blog-item').forEach(item => {
-            if (category === 'all') {
-                item.style.display = 'flex';
-            } else if (item.getAttribute('data-category') === category) {
-                item.style.display = 'flex';
-            } else {
-                item.style.display = 'none';
-            }
+    document.addEventListener('DOMContentLoaded', function() {
+        // 绑定标签点击事件
+        document.querySelectorAll('.blog-tag').forEach(tag => {
+            tag.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.textContent;
+                filterBlog(category, this);
+            });
         });
-    }
+        
+        function filterBlog(category, element) {
+            // 更新标签状态
+            document.querySelectorAll('.blog-tag').forEach(tag => tag.classList.remove('active'));
+            element.classList.add('active');
+            
+            // 筛选文章
+            const categoryMap = {
+                '全部': 'all',
+                'AI 大模型': 'ai',
+                '工具技巧': 'tools',
+                '财经分析': 'finance'
+            };
+            const cat = categoryMap[category];
+            
+            document.querySelectorAll('.blog-item').forEach(item => {
+                if (cat === 'all') {
+                    item.style.display = 'flex';
+                } else if (item.getAttribute('data-category') === cat) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    });
     </script>
 </body>
 </html>
