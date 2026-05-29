@@ -6,16 +6,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,17 +19,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-EOF && git add .github/workflows/deploy.yml && git commit -m "ci: 添加 GitHub Pages 自动构建部署工作流" && git push origin main 2>&1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+EOF && git add .github/workflows/deploy.yml && git commit -m "ci: 切换到 gh-pages 分支部署方式" && git push origin main 2>&1
