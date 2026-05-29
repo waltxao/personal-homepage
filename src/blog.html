@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080d" />
+  <title>博客 | Walt 的个人主页</title>
+  <meta name="description" content="浏览 Walt 的博客文章，覆盖 AI 大模型、效率工具与财经分析等主题。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./assets/logo.svg" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <script type="module" src="./scripts/main.js"></script>
+  <script type="module" src="./scripts/blog.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <img src="./assets/logo.svg" alt="Walt logo" />
+        <span>Walt</span>
+        <small>::~</small>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="切换导航" aria-expanded="false" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M4 7h16M4 12h10M4 17h14" />
+        </svg>
+      </button>
+      <nav class="nav" data-nav aria-label="主导航">
+        <a href="./">首页</a>
+        <a href="./#about">关于</a>
+        <a href="./#projects">项目</a>
+        <a href="./blog.html" class="active">博客</a>
+        <a href="./#contact">联系</a>
+        <a class="nav-cta" href="./admin.html">后台</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section blog-hero">
+      <div class="container">
+        <h1 class="section-title gradient-text">博客文章</h1>
+        <p>这里汇集我在 AI 大模型、效率工具、运营实践与财经分析方面的内容输出，适合快速翻阅与收藏。</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="blog-controls" id="blogFilters"></div>
+        <div class="blog-grid" id="blogList"></div>
+        <div class="blog-empty" id="blogEmpty" hidden>
+          暂无匹配文章，请切换分类或稍后再来。
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>© 2026 Walt</span>
+    <span>由 Vite 构建，部署于 GitHub Pages</span>
+  </footer>
+
+  <div class="toast" id="toast" aria-live="polite" role="status"></div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "site": {
+    "title": "Walt 的个人主页",
+    "description": "聚焦 AI 大模型、效率工具与数智化运营的个人主页，展示项目经历、技术实践与博客内容。",
+    "baseUrl": "https://waltxao.github.io/personal-homepage",
+    "language": "zh-CN",
+    "theme": "#00ff9f"
+  },
+  "profile": {
+    "displayName": "Walt",
+    "tagline": "数智化运营专家",
+    "heroQuote": "让复杂流程变简单，让工具为业务提效。",
+    "bio": "我热衷于探索 AI、自动化与数据驱动决策，擅长把复杂业务需求拆解成可落地的技术方案。日常关注 LLM 应用、效率工具、供应链数字化与内容创作。",
+    "location": "中国 · 开放远程协作",
+    "avatar": "👨‍💻",
+    "resumeUrl": "",
+    "available": true
+  },
+  "skills": [
+    "AI / LLM 应用",
+    "数据分析",
+    "自动化流程",
+    "效率工具",
+    "产品与运营",
+    "内容创作"
+  ],
+  "socials": [
+    { "label": "邮箱", "icon": "email", "href": "mailto:walt@example.com" },
+    { "label": "GitHub", "icon": "github", "href": "https://github.com/waltxao" },
+    { "label": "微信", "icon": "wechat", "href": "#wechat" },
+    { "label": "联系表单", "icon": "message", "href": "#contact" }
+  ],
+  "contact": {
+    "email": "walt@example.com",
+    "wechat": "Walt-Chat",
+    "location": "远程优先",
+    "message": "欢迎围绕 AI 落地、效率工具、内容合作交流。"
+  },
+  "stats": [
+    { "label": "AI 落地项目", "value": "20+" },
+    { "label": "效率提升案例", "value": "50+" },
+    { "label": "博客输出", "value": "120+" },
+    { "label": "工作流自动化", "value": "100+" }
+  ],
+  "highlights": [
+    "从 0 到 1 搭建公司级 AI Agent 工作流",
+    "通过数据建模优化仓储人效，节省百万级成本",
+    "持续输出 AI 与效率工具内容，帮助更多人提升工作流"
+  ],
+  "projects": [
+    {
+      "title": "美国海外仓人效优化",
+      "icon": "📊",
+      "summary": "通过数据驱动算法实现单仓日均人力配置优化，提升人效并显著节省运营成本。",
+      "tags": ["数据分析", "算法优化", "WMS"],
+      "metrics": ["人效提升 18%+", "单仓人力优化 20%", "节省百万级成本"]
+    },
+    {
+      "title": "AGI 数智化工具落地",
+      "icon": "🤖",
+      "summary": "推动 AI Agent 在供应链场景中的落地方案，把大模型能力融入业务执行与知识管理。",
+      "tags": ["OpenClaw", "LLM", "Dify"],
+      "metrics": ["流程自动化", "知识沉淀", "协同效率提升"]
+    },
+    {
+      "title": "仓储流程智能化改造",
+      "icon": "🏭",
+      "summary": "整合 WMS、BI 与多维表能力，打造更透明、更可追踪的仓储运营体系。",
+      "tags": ["自动化", "WMS", "BI"],
+      "metrics": ["数据可视", "流程协同", "异常响应更快"]
+    },
+    {
+      "title": "DeFi 区块链项目统筹",
+      "icon": "⛓️",
+      "summary": "统筹跨部门协作，推进产品定位、功能规划与 UI/UX 品控，完成从 0 到 1 项目周期。",
+      "tags": ["项目统筹", "产品规划", "DeFi"],
+      "metrics": ["0 到 1 落地", "跨团队协作", "产品品质提升"]
+    }
+  ]
+}

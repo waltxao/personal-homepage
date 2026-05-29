@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080d" />
+  <title>页面未找到 | Walt 的个人主页</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./assets/logo.svg" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <script type="module" src="./scripts/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <img src="./assets/logo.svg" alt="Walt logo" />
+        <span>Walt</span>
+        <small>::~</small>
+      </a>
+      <nav class="nav" data-nav aria-label="主导航">
+        <a href="./">首页</a>
+        <a href="./blog.html">博客</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-404">
+    <div class="container">
+      <h1 class="gradient-text">404</h1>
+      <p>页面不存在、已移动或链接失效，建议回到首页或博客页继续浏览。</p>
+      <div class="action-row" style="justify-content: center;">
+        <a class="btn btn-primary" href="./">返回首页</a>
+        <a class="btn btn-secondary" href="./blog.html">查看博客</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer container">
+    <span>© 2026 Walt</span>
+    <span>由 Vite 构建，部署于 GitHub Pages</span>
+  </footer>
+
+  <div class="toast" id="toast" aria-live="polite" role="status"></div>
+</body>
+</html>

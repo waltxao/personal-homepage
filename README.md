@@ -1,164 +1,87 @@
 # Walt 的个人主页
 
-> 一个极客风格的个人网站，包含主页、博客、后台管理系统
+一个面向个人品牌展示的现代主页项目，包含首页、博客、文章页与后台管理模块。  
+技术栈保持轻量：`HTML + CSS + Vanilla JS + Vite`，并支持 GitHub Pages 部署。
 
-## 🌐 在线访问
+## 在线访问
 
-**主页：** https://waltxao.github.io/personal-homepage/
+- 主页：https://waltxao.github.io/personal-homepage/
+- 博客：https://waltxao.github.io/personal-homepage/blog.html
 
-**博客：** https://waltxao.github.io/personal-homepage/blog.html
-
-**后台管理：** https://waltxao.github.io/personal-homepage/admin.html
-
----
-
-## 📁 项目结构
+## 项目结构
 
 ```
 personal-homepage/
-├── index.html       # 网站主页
-├── blog.html       # 博客列表页
-├── admin.html      # 后台管理系统
-├── config.js      # 网站配置文件（由后台生成）
-├── logo.svg       # 网站 Logo
-└── blog/          # 博客文章目录
-    ├── *.html     # 博客文章
-    └── ...
+├─ src/
+│  ├─ index.html          # 首页
+│  ├─ blog.html           # 博客列表页
+│  ├─ admin.html          # 后台管理页
+│  ├─ 404.html            # 404 页
+│  ├─ styles/             # 样式与设计 token
+│  ├─ scripts/            # 前端脚本
+│  ├─ assets/             # 静态资源
+│  ├─ blog/               # 已有博客文章
+│  ├─ data/site.json      # 站点数据主配置
+│  ├─ data/blog.json      # 博客索引（由脚本生成）
+│  └─ public/             # 直接复制到产物的静态文件
+├─ scripts/               # 构建期脚本
+├─ vite.config.js
+└─ package.json
 ```
 
----
+## 本地开发
 
-## ⚙️ 功能特性
-
-### 🏠 主页
-
-- 极客风格终端设计
-- 个人简介与技能展示
-- 项目作品展示
-- 博客预览
-- 联系方式展示
-- 响应式布局
-
-### 📝 博客
-
-- 分类筛选：全部 / AI大模型 / 工具技巧 / 财经分析
-- 博客文章列表
-- 返回导航
-
-### 🔧 后台管理 (admin.html)
-
-- 密码登录保护
-- 博客管理：撰写、编辑、删除
-- Markdown 编辑器（支持实时预览）
-- 图片上传支持
-- 个人简介设置
-- 联系方式管理
-- 登录密码修改
-
----
-
-## 🔐 后台使用指南
-
-### 1. 登录
-
-- 访问 `admin.html`
-- 默认密码：`Walt2026`
-
-### 2. 修改个人简介
-
-1. 点击「网站设置」
-2. 修改头像、名称、简介等
-3. 点击「💾 保存修改」
-4. 浏览器会自动下载 `config.js`
-5. 将 `config.js` 上传到 GitHub 仓库根目录
-
-### 3. 修改联系方式
-
-1. 点击「网站设置」
-2. 修改邮箱、电话、微信等
-3. 点击「💾 保存联系方式」
-4. 下载新的 `config.js`
-5. 上传到 GitHub
-
-### 4. 写新博客
-
-1. 点击「博客管理」→「撰写博客」
-2. 填写标题、选择分类
-3. 使用 Markdown 编辑器写文章
-4. 点击「💾 保存文章」
-5. 浏览器会弹出下载，保存 HTML 文件
-6. 将下载的 HTML 文件上传到 `blog/` 目录
-
-### 5. 修改密码
-
-1. 点击「修改密码」
-2. 输入当前密码、新密码
-3. 点击「🔐 修改密码」
-
----
-
-## 📤 上传 GitHub Pages
-
-### 方法一：删除旧仓库，重新上传
-
-1. 删除 GitHub 上的旧仓库
-2. 重新创建仓库 `personal-homepage`
-3. 上传整个文件夹
-
-### 方法二：更新文件
-
-1. 上传 `config.js` 到根目录
-2. 上传新的博客 HTML 到 `blog/` 目录
-3. 上传 `index.html`（如有个性化修改）
-
----
-
-## 🎨 自定义修改
-
-### 修改主页内容
-
-直接编辑 `index.html` 中的对应部分：
-
-- 技能标签：搜索 `skill-tag`
-- 项目展示：搜索 `project-card`
-- 博客列表：搜索 `blog-list`
-
-### 修改样式
-
-在 `index.html` 的 `<style>` 标签中修改 CSS 变量：
-
-```css
-:root {
-    --bg-dark: #0a0a0f;      /* 背景色 */
-    --accent-green: #00ff9f;  /* 主色调 */
-    --accent-blue: #00d4ff;   /* 辅助色 */
-}
+```bash
+npm install
+npm run dev
 ```
 
----
+打开终端输出的本地地址即可预览。
 
-## 📝 技术栈
+## 构建与预览产物
 
-- 纯 HTML + CSS + JavaScript
-- 无需后端服务器
-- GitHub Pages 托管
-- 极客风格终端设计
-- 响应式布局
+```bash
+npm run build
+npm run preview
+```
 
----
+构建后会生成 `dist/`，其中包含可直接部署到 GitHub Pages 的静态文件。
 
-## ⚠️ 注意事项
+## 数据说明
 
-1. **配置文件**：后台修改的内容需要下载 `config.js` 并手动上传
-2. **博客文章**：新写的博客需要导出 HTML 并上传到 `blog/` 目录
-3. **密码安全**：首次登录后建议修改默认密码
+- `src/data/site.json`：站点主配置，包含个人简介、技能、项目、联系方式、社交链接与后台密码。
+- `src/data/blog.json`：由 `npm run build` 自动从 `src/blog/` 生成。
+- `src/blog/`：存放已有博客文章，保持原始 HTML 文件名。
 
----
+## 后台管理使用方式
 
-## 🤝 贡献
+1. 打开 `admin.html`
+2. 输入管理密码（若 `site.json` 中未配置密码，可直接进入）
+3. 修改资料、技能、联系信息
+4. 点击「导出 site.json」并替换 `src/data/site.json`
+5. 重新执行构建与发布流程
 
-欢迎提交 Issue 和 Pull Request！
+## 新增文章流程
 
----
+1. 在后台生成文章模板
+2. 将模板保存到 `src/blog/`
+3. 执行 `npm run build`
+4. 发布新的构建产物到 GitHub Pages
 
-*Walt 的个人主页 - 2026*
+## 部署建议
+
+推荐使用 GitHub Actions 自动化：
+
+1. 推送代码到 `main`
+2. 安装依赖并执行 `npm run build`
+3. 将 `dist/` 部署到 GitHub Pages
+
+## 注意事项
+
+- 本项目默认不再在仓库中保留明文默认密码。
+- 如需更安全的后台访问，建议仅在本地或受保护环境下使用后台功能。
+- 博客文章保留原始文件名，避免外部链接失效。
+
+## License
+
+仅用于个人站点展示，可按需修改。

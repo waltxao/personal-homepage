@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080d" />
+  <title>后台管理 | Walt 的个人主页</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./assets/logo.svg" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <script type="module" src="./scripts/main.js"></script>
+  <script type="module" src="./scripts/admin.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <img src="./assets/logo.svg" alt="Walt logo" />
+        <span>Walt</span>
+        <small>::~</small>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="切换导航" aria-expanded="false" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M4 7h16M4 12h10M4 17h14" />
+        </svg>
+      </button>
+      <nav class="nav" data-nav aria-label="主导航">
+        <a href="./">首页</a>
+        <a href="./#about">关于</a>
+        <a href="./#projects">项目</a>
+        <a href="./blog.html">博客</a>
+        <a href="./#contact">联系</a>
+        <a class="nav-cta active" href="./admin.html">后台</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="loginSection" class="section admin-hero">
+      <div class="container" style="max-width: 760px;">
+        <h1 class="section-title gradient-text">后台管理</h1>
+        <p style="color: var(--color-muted); margin-bottom: 24px;">用于维护站点资料、联系方式、技能展示与文章模板，修改后会生成可部署的静态文件。</p>
+        <div class="login-card surface">
+          <h2>登录</h2>
+          <form id="loginForm">
+            <div class="field">
+              <label for="passwordInput">管理密码</label>
+              <input id="passwordInput" type="password" autocomplete="current-password" placeholder="若未设置密码可直接进入" />
+            </div>
+            <div class="login-error" id="loginError"></div>
+            <div class="action-row">
+              <button class="btn btn-primary" type="submit">进入后台</button>
+              <a class="btn btn-secondary" href="./">返回首页</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="adminSection" class="section" hidden>
+      <div class="container" style="max-width: 960px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 24px;">
+          <h1 class="section-title" style="margin-bottom: 0;">站点管理</h1>
+          <div class="action-row">
+            <button class="btn btn-primary" data-action="download-site">导出 site.json</button>
+            <a class="btn btn-secondary" href="./">预览站点</a>
+          </div>
+        </div>
+
+        <div class="admin-tabs">
+          <button class="filter-btn active" data-tab="panelProfile">资料设置</button>
+          <button class="filter-btn" data-tab="panelBlog">文章模板</button>
+          <button class="filter-btn" data-tab="panelPreview">配置预览</button>
+        </div>
+
+        <div id="panelProfile" class="admin-panel active surface" style="padding: 24px;">
+          <div class="form-grid">
+            <div class="field-grid">
+              <div class="field">
+                <label for="avatarEmoji">头像 Emoji</label>
+                <input id="avatarEmoji" type="text" value="👨‍💻" />
+              </div>
+              <div class="field">
+                <label for="displayName">显示名称</label>
+                <input id="displayName" type="text" value="Walt" />
+              </div>
+              <div class="field">
+                <label for="tagline">一句话介绍</label>
+                <input id="tagline" type="text" value="数智化运营专家" />
+              </div>
+              <div class="field">
+              <label for="adminPasswordInput">管理密码</label>
+              <input id="adminPasswordInput" type="password" placeholder="留空则无需密码" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="bioText">个人简介</label>
+              <textarea id="bioText" rows="5"></textarea>
+            </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="contactEmail">邮箱</label>
+                <input id="contactEmail" type="email" />
+              </div>
+              <div class="field">
+                <label for="contactWechat">微信</label>
+                <input id="contactWechat" type="text" />
+              </div>
+              <div class="field">
+                <label for="contactLocation">坐标/远程说明</label>
+                <input id="contactLocation" type="text" />
+              </div>
+              <div class="field">
+                <label for="contactMessage">联系模块文案</label>
+                <input id="contactMessage" type="text" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="skillEditor">技能标签（每行一个）</label>
+              <textarea id="skillEditor" rows="5"></textarea>
+            </div>
+            <div class="action-row">
+              <button class="btn btn-primary" data-action="download-site">导出配置</button>
+              <button class="btn btn-secondary" type="button" onclick="location.reload()">重置表单</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="panelBlog" class="admin-panel surface" style="padding: 24px;">
+          <div class="form-grid">
+            <div class="field-grid">
+              <div class="field">
+                <label for="articleTitle">文章标题</label>
+                <input id="articleTitle" type="text" placeholder="示例：如何用 AI 提升运营效率" />
+              </div>
+              <div class="field">
+                <label for="articleCategory">文章分类</label>
+                <select id="articleCategory">
+                  <option value="AI大模型">AI大模型</option>
+                  <option value="工具技巧">工具技巧</option>
+                  <option value="财经分析">财经分析</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="markdownEditor">文章正文（可粘贴 Markdown 或 HTML 片段）</label>
+              <textarea id="markdownEditor" rows="10" placeholder="在这里书写或粘贴内容..."></textarea>
+            </div>
+            <div class="field">
+              <label>实时预览</label>
+              <div id="previewContent" class="preview-block"></div>
+            </div>
+            <div class="action-row">
+              <button class="btn btn-primary" data-action="download-template">导出文章模板</button>
+              <span style="color: var(--color-muted); font-size: 0.9rem;">导出后放到 <code>src/blog/</code>，再执行 <code>npm run build</code></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="panelPreview" class="admin-panel surface" style="padding: 24px;">
+          <div class="form-grid">
+            <div class="field">
+              <label>即将导出的 site.json 内容</label>
+              <pre id="previewBlock" class="preview-block"></pre>
+            </div>
+            <div class="action-row">
+              <button class="btn btn-primary" data-action="download-site">导出 site.json</button>
+              <a class="btn btn-secondary" href="./blog.html">查看博客</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>© 2026 Walt</span>
+    <span>后台仅本地生成配置，建议结合 GitHub Actions 自动化发布</span>
+  </footer>
+
+  <div class="toast" id="toast" aria-live="polite" role="status"></div>
+</body>
+</html>

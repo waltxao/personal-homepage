@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>为什么马斯克给这家中国公司点赞？ | Walt 的个人主页</title>
+  <meta name="description" content="为什么马斯克给这家中国公司点赞？ 的全文阅读页，来自 Walt 的博客。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../assets/logo.svg" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <script type="module" src="../scripts/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../">
+        <img src="../assets/logo.svg" alt="Walt logo" />
+        <span>Walt</span>
+        <small>::~</small>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="切换导航" aria-expanded="false" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M4 7h16M4 12h10M4 17h14" />
+        </svg>
+      </button>
+      <nav class="nav" data-nav aria-label="主导航">
+        <a href="../">首页</a>
+        <a href="../blog.html" class="active">博客</a>
+        <a href="../#contact">联系</a>
+        <a class="nav-cta" href="../admin.html">后台</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="article-hero reveal">
+      <div class="container">
+        <h1 class="gradient-text">为什么马斯克给这家中国公司点赞？</h1>
+        
+      </div>
+    </header>
+
+    <section class="article-container">
+      <div class="container article-body reveal">
+        <h1 class="gradient-text">为什么马斯克给这家中国公司点赞？</h1>
+        <div class="article-meta">
+                    <span>📅 2026-03-20</span>
+                    <span>✍️ Walt</span>
+                </div>
+      </div>
+    </header>
+
+    <section class="article-container">
+      <div class="container article-body reveal">
+        
+
+            <div class="article-content">
+                <h1>为什么马斯克给这家中国公司点赞？</h1>
+<blockquote>
+<p>他们动了AI大模型的「祖传地基」🔍</p>
+</blockquote>
+<hr>
+<p>一份来自月之暗面Kimi的技术报告，最近让硅谷AI圈有点热闹。</p>
+<p>3月16日发布的《Attention Residuals》，名字听起来很学术，但核心思路其实不复杂：让AI模型的每一层都能「回头看」之前的所有层，而不是只能看到紧邻的上一层。</p>
+<p>马斯克在X平台上留了句&quot;Impressive work from Kimi&quot;。OpenAI的核心工程师也转发了这篇论文。</p>
+<p>这些来自业界顶尖人物的背书，让这份报告迅速出圈。但抛开名人效应，这项技术到底解决了什么问题？</p>
+<hr>
+<h2>AI模型的「记性」问题 ⚠️</h2>
+<p>要理解这件事，得先说说现代AI模型的基本结构。</p>
+<p>现在的大语言模型，比如ChatGPT、Claude、Kimi，本质上都是一层一层堆起来的神经网络。少的有几十层，多的有上百层。数据从底层进去，一层一层往上传，最后在顶层输出结果。</p>
+<p>你可以把它想象成一条工厂流水线：原材料从第一道工序进去，每个工人加工一遍，再传给下一个，最后出来成品。</p>
+<p>但这里有个问题：流水线越长，越难管理。</p>
+<p>假设第50个工人犯了错，你想纠正他，就得把纠错信号一路往回传，经过前面49个工人才能传到第1个。传着传着，信号就越来越弱，底层的工人根本不知道哪里出了问题。</p>
+<p>为了让这么深的流水线能正常运转，2015年有研究者想了个办法：给每道工序旁边加一条「直通道」，把原材料原封不动地绕过这道工序，直接和加工结果合并，再往下传。</p>
+<p>这样纠错信号就可以沿着直通道一路畅通无阻地传回底层，不会消失。</p>
+<p>这个设计非常有效，后来成为几乎所有AI模型的标配。但它有个隐性问题：每个工人拿到的，都是前面所有工人产出的平均混合，每道工序各占一份。</p>
+<p>第50个工人无法说「我想多要一点第3道工序的原料」，也无法拒绝「第20道工序的东西对我没用」。结果就是，很多中间层其实没在认真干活——研究发现，大模型里相当一部分层直接删掉，效果几乎不变。</p>
+<p>过去十年，业界的应对策略是：在现有流水线上做优化，换更好的原材料、更精细的管理方法。而Kimi选择了一条更难的路：重新设计流水线的基本结构。</p>
+<hr>
+<h2>把「注意力」换个方向 💡</h2>
+<p>Kimi的核心洞察来自一个类比。</p>
+<p>现在的AI模型处理文字时，有个关键机制叫「注意力」。简单来说，就是模型在读到一个词时，可以回头去看这句话里前面的任意词，而且看哪里、看多少，由当前这个词自己决定。</p>
+<p>比如读到「它」这个字时，模型会回头去找「它」指代的是什么——是「猫」还是「狗」？看相关程度决定关注多少。</p>
+<p>研究人员发现，前面说的流水线问题，和这里的「注意力」问题，本质上是一回事。只是一个是发生在「一句话的词与词之间」，一个是发生在「模型的层与层之间」。</p>
+<p>如果把AI模型想象成一张表格：横着是一句话里的每个字，竖着是模型的每一层。原来的「注意力」是横着工作的，而Kimi做的事情，就是把同样的机制竖过来——让每一层在处理时，可以动态地「回顾」前面所有层的输出，自主决定参考哪些、参考多少。</p>
+<p>具体怎么做？给每一层配一个「需求单」。处理当前这层时，先拿着需求单去翻所有前面层的产出，根据相关度算出一套取用比例，再按这个比例把需要的原料混合起来。</p>
+<p>这样一来，每一层从被动接受平均混合，变成了主动有选择地提取信息。而且参考哪些层、参考多少，会根据当前处理的内容动态变化。</p>
+<hr>
+<h2>从理论到现实的折中 ⚙️</h2>
+<p>上面说的「全量」方案在理论上很理想，但真到大模型上训练时遇到现实问题：需要保存所有层的输出，内存占用太大。</p>
+<p>Kimi的解决方案很务实：把流水线分成若干段（比如8-9段），段内部还是用原来的老办法，段与段之间才用新的「注意力」机制。</p>
+<p>就像不必给每层楼都装电梯，只在关键楼层设快速通道就够了。这样需要保存的数据量大幅减少，而效果损失很小。</p>
+<p>实测结果：在480亿参数的模型上，新方案在15项主流测试中都不输于老方案，在科学推理、数学、代码等任务上还有明显提升。更重要的是效率——同样算力下，效果相当于老方案花1.25倍算力才能达到的水平。</p>
+<p>训练额外开销不到4%，推理延迟增加不到2%。这个投入产出比，对于基础设施级别的改进来说，相当可观。</p>
+<hr>
+<h2>一个值得注意的信号 📈</h2>
+<p>Kimi创始人杨植麟在最近的演讲中提到：「行业目前普遍使用的很多技术标准，本质上是八九年前的产物，正逐渐成为瓶颈。」</p>
+<p>这次的技术发布，以及同时披露的其他底层创新，都在指向同一个方向：AI模型的优化重心，正在从「表层改进」下沉到「底层结构」。</p>
+<p>一个值得注意的细节是，这篇论文的作者里有位17岁的高中生实习生。这本身说明了两点：一是大模型底层创新对年轻人才的开放程度；二是中国AI团队对基础研究的吸引力在提升。</p>
+<p>从位置编码到线性注意力，再到这次的残差连接改进，中国团队在大模型基础研究中的存在感明显增强。这种从「应用跟随」到「底层创新」的转变，可能是比单个技术突破更值得关注的长线信号。</p>
+<hr>
+<h2>几点冷静看法 🤔</h2>
+<p>需要指出的是，这项技术并非万能。</p>
+<p>它解决的是特定问题，而不是AI模型的所有局限。对于已经训练完成的模型，它无法直接应用；对于新模型，它提供的是一种更高效的架构选择，而非革命性的能力跃升。</p>
+<p>另外，1.25倍的效率提升虽然可观，但是否足以推动行业大规模迁移现有架构，还需要观察。历史上有不少理论上更优的设计，最终因为生态惯性未能普及。</p>
+<p>但无论如何，在残差连接这个十年未动的地基上出现新的可能性，本身就是一件值得记录的事。它至少说明，AI领域的基础创新远未穷尽，只是需要有人愿意回到第一性原理，重新审视那些「理所当然」的设计。</p>
+<hr>
+<p><strong>技术信息</strong> 📚</p>
+<ul>
+<li>论文：arxiv.org/abs/2603.15031</li>
+<li>开源实现：github.com/MoonshotAI/Attention-Residuals</li>
+</ul>
+<hr>
+<p>觉得这篇技术解读有帮助的话，欢迎点赞转发，也欢迎在评论区分享你的看法 💬</p>
+<p><em>本文基于公开技术资料整理，观点独立，不构成任何技术采用或投资建议。</em></p>
+
+            </div>
+        </div>
+    </article>
+        <div class="article-footer">
+          <a class="btn btn-secondary" href="../blog.html">← 返回博客列表</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <div class="toast" id="toast"></div>
+        <div class="article-footer">
+          <a class="btn btn-secondary" href="../blog.html">← 返回博客列表</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>© 2026 Walt</span>
+    <span>由 Vite 构建，部署于 GitHub Pages</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+</body>
+</html>

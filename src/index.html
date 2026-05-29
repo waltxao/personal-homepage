@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080d" />
+  <title>Walt 的个人主页 | AI、效率与数智化实践</title>
+  <meta name="description" content="聚焦 AI 大模型、效率工具与数智化运营的个人主页，展示项目经历、技术实践与博客内容。" />
+  <meta property="og:title" content="Walt 的个人主页" />
+  <meta property="og:description" content="聚焦 AI 大模型、效率工具与数智化运营的个人主页，展示项目经历、技术实践与博客内容。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./assets/logo.svg" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <script type="module" src="./scripts/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <img src="./assets/logo.svg" alt="Walt logo" />
+        <span>Walt</span>
+        <small>::~</small>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="切换导航" aria-expanded="false" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M4 7h16M4 12h10M4 17h14" />
+        </svg>
+      </button>
+      <nav class="nav" data-nav aria-label="主导航">
+        <a href="./" class="active">首页</a>
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="./blog.html">博客</a>
+        <a href="#contact">联系</a>
+        <a class="nav-cta" href="./admin.html">后台</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="hero-eyebrow"><span class="dot"></span><span>正在开放协作</span></div>
+          <h1 class="gradient-text" id="heroName">Walt</h1>
+          <p class="hero-lead" id="heroTagline">让复杂流程变简单，让工具为业务提效。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">联系我</a>
+            <a class="btn btn-secondary" href="./blog.html">阅读博客</a>
+          </div>
+          <div class="hero-highlights" id="heroHighlights"></div>
+        </div>
+        <div class="hero-card reveal">
+          <div class="hero-terminal">
+            <div class="terminal-header">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+              <span>~/waltxao/profile</span>
+            </div>
+            <div class="terminal-lines">
+              <div class="terminal-line"><span class="prompt">$</span><span>cat intro.md</span></div>
+              <div class="terminal-line"><span class="prompt">→</span><span id="heroBio">我热衷于探索 AI、自动化与数据驱动决策，擅长把复杂业务需求拆解成可落地的技术方案。</span><span class="cursor"></span></div>
+            </div>
+            <div class="stats-grid" id="heroStats"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">关于我</h2>
+        <div class="surface" style="padding: 24px; display: grid; gap: 18px;">
+          <div style="display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start;">
+            <div class="project-icon" id="aboutAvatar">👨‍💻</div>
+            <div>
+              <h3 id="aboutName">Walt</h3>
+              <p id="aboutTagline" style="color: var(--color-muted); margin-top: 4px;">数智化运营专家</p>
+              <p id="aboutBio" style="margin-top: 12px; max-width: 680px;">我热衷于探索 AI、自动化与数据驱动决策，擅长把复杂业务需求拆解成可落地的技术方案。</p>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 12px;">技能标签</h3>
+            <div class="skill-grid" id="skillGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">项目经历</h2>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <section id="blog" class="section">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 28px;">
+          <h2 class="section-title" style="margin-bottom: 0;">最新博客</h2>
+          <a class="btn btn-secondary" href="./blog.html">查看全部</a>
+        </div>
+        <div class="blog-grid" id="homeBlogList"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">联系我</h2>
+        <p style="color: var(--color-muted); margin-bottom: 24px; max-width: 560px;" id="contactMessage">欢迎围绕 AI 落地、效率工具、内容合作交流。</p>
+        <div class="contact-grid" id="contactGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>© 2026 Walt</span>
+    <span>由 Vite 构建，部署于 GitHub Pages</span>
+  </footer>
+
+  <div class="toast" id="toast" aria-live="polite" role="status"></div>
+
+  <script type="module">
+    import './scripts/main.js';
+
+    async function loadSite() {
+      try {
+        const response = await fetch('./data/site.json');
+        return await response.json();
+      } catch (error) {
+        console.error('Failed to load site data', error);
+        return null;
+      }
+    }
+
+    async function loadBlog() {
+      try {
+        const response = await fetch('./data/blog.json');
+        return await response.json();
+      } catch (error) {
+        console.error('Failed to load blog data', error);
+        return [];
+      }
+    }
+
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value ?? '';
+    }
+
+    function setHTML(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = value ?? '';
+    }
+
+    function renderHomepage(site, posts) {
+      if (!site) return;
+      const profile = site.profile || {};
+      const contact = site.contact || {};
+      setText('heroName', profile.displayName || 'Walt');
+      setText('heroTagline', profile.heroQuote || profile.tagline || '');
+      setText('heroBio', profile.bio || '');
+      setText('aboutName', profile.displayName || 'Walt');
+      setText('aboutTagline', profile.tagline || '');
+      setText('aboutBio', profile.bio || '');
+      setText('contactMessage', contact.message || '');
+
+      const avatar = profile.avatar || '👨‍💻';
+      const avatarEl = document.getElementById('aboutAvatar');
+      if (avatarEl) avatarEl.textContent = avatar;
+
+      setHTML('heroHighlights', (site.highlights || []).map(item => `<span class="chip">${item}</span>`).join(''));
+      setHTML('skillGrid', (site.skills || []).map(skill => `<span class="badge">${skill}</span>`).join(''));
+      setHTML('heroStats', (site.stats || []).map(stat => `
+        <div class="stat-card">
+          <div class="stat-value">${stat.value}</div>
+          <div class="stat-label">${stat.label}</div>
+        </div>
+      `).join(''));
+
+      setHTML('projectGrid', (site.projects || []).map(project => `
+        <article class="project-card surface reveal">
+          <div class="project-icon">${project.icon || '🚀'}</div>
+          <div class="project-title">${project.title}</div>
+          <div class="project-summary">${project.summary}</div>
+          <div class="tag-row">${(project.tags || []).map(tag => `<span class="chip">${tag}</span>`).join('')}</div>
+          <div class="metric-row">${(project.metrics || []).map(metric => `<span class="metric">${metric}</span>`).join('')}</div>
+        </article>
+      `).join(''));
+
+      setHTML('contactGrid', (site.socials || []).map(social => `
+        <a class="contact-card surface reveal" href="${social.href}" target="_blank" rel="noopener">
+          <div class="contact-icon">${social.icon === 'email' ? '📧' : social.icon === 'github' ? '🐙' : social.icon === 'wechat' ? '💬' : '✉️'}</div>
+          <div>
+            <div class="contact-label">${social.label}</div>
+            <div class="contact-value">${social.href}</div>
+          </div>
+        </a>
+      `).join(''));
+
+      const latestPosts = posts.slice(0, 4);
+      setHTML('homeBlogList', latestPosts.map(post => `
+        <a class="blog-card surface reveal" href="./blog/${encodeURIComponent(post.file)}">
+          <div class="blog-icon">📝</div>
+          <div>
+            <div class="blog-title">${post.title}</div>
+            <div class="blog-summary">${post.summary}</div>
+            <div class="blog-meta"><span>${post.category}</span><span>${post.date}</span></div>
+          </div>
+          <div class="blog-arrow">→</div>
+        </a>
+      `).join(''));
+    }
+
+    const [site, posts] = await Promise.all([loadSite(), loadBlog()]);
+    renderHomepage(site, posts);
+  </script>
+</body>
+</html>
